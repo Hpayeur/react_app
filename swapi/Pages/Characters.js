@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import CharacterComponent from "../Components/CharacterComponent";
 import { Container, Form, FormControl } from "react-bootstrap";
 
 const Characters = () => {
+  const [searchQuery, setSearchQuery] = useState("");
+
   return (
     <Container>
       <h2 className="text-center mb-4">Star Wars Characters</h2>
@@ -12,11 +14,11 @@ const Characters = () => {
           placeholder="Search Characters"
           className="me-2"
           aria-label="Search"
-          value=""
-          onChange={""} // Update with search handler later
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
         />
       </Form>
-      <CharacterComponent />
+      <CharacterComponent searchQuery={searchQuery} />
     </Container>
   );
 };
