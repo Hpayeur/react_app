@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { GetCharacters } from "../API/CharacterAPI";
+import { GetCharacters } from "../Api/CharacterAPI";
 import { Card, Stack, Container, Spinner } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
