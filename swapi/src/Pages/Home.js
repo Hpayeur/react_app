@@ -11,6 +11,9 @@ const Home = () => {
       <Button href="/Characters" variant="primary" size="lg" className="mt-3">
         View Characters
       </Button>
+      <Button href="/Planets" variant="primary" size="lg" className="mt-3">
+        View Planets
+      </Button>
     </Container>
   );
 };

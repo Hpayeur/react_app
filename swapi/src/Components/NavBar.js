@@ -11,8 +11,11 @@ const NavBar = () => {
         <Navbar.Toggle aria-controls="navbar-nav" />
         <Navbar.Collapse id="navbar-nav">
           <Nav className="ms-auto">
-            <Nav.Link href="/Characters" className="mx-2">
+            <Nav.Link href="/Characters" className="mx-2 p-6">
               Characters
+            </Nav.Link>
+            <Nav.Link href="/Planets" className="mx-2 p-6">
+              Planets
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
