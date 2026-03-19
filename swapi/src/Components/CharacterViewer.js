@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { GetCharacterById } from "../Api/CharacterAPI";
+import { GetCharacterById } from "../API/CharacterAPI";
 import { Card, Col, Container, ListGroup, Row, Spinner } from "react-bootstrap";
 import { sentenceCase } from "change-case";
 
