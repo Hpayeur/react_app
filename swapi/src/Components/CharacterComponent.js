@@ -3,36 +3,21 @@ import { GetCharacters } from "../Api/CharacterAPI";
 import { Card, Stack, Container, Spinner } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-const CharacterComponent = ({ searchQuery }) => {
+const CharacterComponent = () => {
   const [characters, setCharacters] = useState([]);
-  const [filteredCharacters, setFilteredCharacters] = useState([]);
 
-  // Fetch characters when the component mounts
   useEffect(() => {
     GetCharacters().then((response) => {
-      const characters = response.data.results;
+      const characters = response;
       setCharacters(characters);
-      setFilteredCharacters(characters);
     });
   }, []);
-
-  // Filter characters based on the search query
-  useEffect(() => {
-    if (searchQuery) {
-      const filtered = characters.filter((character) =>
-        character.name.toLowerCase().includes(searchQuery.toLowerCase()),
-      );
-      setFilteredCharacters(filtered);
-    } else {
-      setFilteredCharacters(characters);
-    }
-  }, [searchQuery, characters]);
 
   return (
     <Container className="my-4">
       <Stack gap={3}>
-        {filteredCharacters.length > 0 ? (
-          filteredCharacters.map((character, index) => (
+        {characters.length > 0 ? (
+          characters.map((character, index) => (
             <Card key={index} className="shadow-sm">
               <Card.Body className="d-flex justify-content-between align-items-center">
                 <div>
